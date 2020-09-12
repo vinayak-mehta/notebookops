@@ -830,7 +830,7 @@ dags:
   ## - if set to true, and you are using `dags.git.gitSync`, you must also enable
   ## `dags.initContainer` to ensure the requirements.txt is available at Pod start
   ##
-  installRequirements: false
+  installRequirements: true
 
   ## configs for the dags PVC
   ##
@@ -977,7 +977,7 @@ dags:
     ## - this is mostly used for when `dags.installRequirements` is true to ensure that
     ##   requirements.txt is available at Pod start
     ##
-    enabled: false
+    enabled: true
 
     ## resource requests/limits for the git-clone container
     ##
@@ -1001,7 +1001,7 @@ dags:
     ## WARNING:
     ## - this path is also used by the git-sync container
     ##
-    mountPath: "/dags"
+    mountPath: "/opt/airflow/dags"
 
     ## sub-path under `dags.initContainer.mountPath` to sync dags to
     ##
@@ -1012,7 +1012,7 @@ dags:
     ## EXAMPLE:
     ##   syncSubPath: "/subdirWithDags"
     ##
-    syncSubPath: ""
+    syncSubPath: "/"
 
 ###################################
 # Kubernetes - Ingress Configs
