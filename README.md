@@ -32,7 +32,7 @@ $ RELEASE=airflow NAMESPACE=airflow \
 
 ## airflow-dag
 
-You can use something like [`airflow-dag`](https://github.com/vinayak-mehta/airflow-dag) in your CI workflow to build notebook dags created on JupyterHub and push them to Airflow's dags folder as described in the talk.
+You can use something like [`airflow-dag`](https://github.com/vinayak-mehta/airflow-dag) in your CI/CD workflows to build notebook dags created on JupyterHub, and push them to Airflow's dags folder, as described in the talk.
 
 ```
 $ airflow-dag build -t airflow/templates -c airflow/configs/dag.yml -o airflow/dags
