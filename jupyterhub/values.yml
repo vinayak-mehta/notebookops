@@ -267,8 +267,14 @@ singleuser:
     name: jupyterhub/k8s-singleuser-sample
     tag: '0.9.1'
     pullPolicy: IfNotPresent
-    # pullSecrets:
-    #   - secretName
+  profileList:
+  - display_name: "Datascience environment"
+    description: "Everything you need to access data within the platform."
+    default: true
+  - display_name: "Geospatial environment"
+    description: "Everything from above, with additional bells and whistles."
+    kubespawner_override:
+      image: jupyterhub/k8s-singleuser-sample:0.9.1
   imagePullSecret:
     enabled: false
     registry:
